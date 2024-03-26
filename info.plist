@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>bundleid</key>
+	<string>com.seansith.tableplus</string>
+	<key>category</key>
+	<string>Productivity</string>
+	<key>connections</key>
+	<dict>
+		<key>253BC7E9-2285-4E65-94D8-4FF069AB33BA</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>72583AE6-64B3-47D1-BFF7-FFC88D6A2097</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string/>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+	</dict>
+	<key>createdby</key>
+	<string>Sean Smith</string>
+	<key>description</key>
+	<string>Quick access to connections in TablePlus</string>
+	<key>disabled</key>
+	<false/>
+	<key>name</key>
+	<string>TablePlus</string>
+	<key>objects</key>
+	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>alfredfiltersresults</key>
+				<true/>
+				<key>alfredfiltersresultsmatchmode</key>
+				<integer>0</integer>
+				<key>argumenttreatemptyqueryasnil</key>
+				<true/>
+				<key>argumenttrimmode</key>
+				<integer>0</integer>
+				<key>argumenttype</key>
+				<integer>1</integer>
+				<key>escaping</key>
+				<integer>102</integer>
+				<key>keyword</key>
+				<string>tp</string>
+				<key>queuedelaycustom</key>
+				<integer>3</integer>
+				<key>queuedelayimmediatelyinitially</key>
+				<true/>
+				<key>queuedelaymode</key>
+				<integer>0</integer>
+				<key>queuemode</key>
+				<integer>1</integer>
+				<key>runningsubtext</key>
+				<string>Searching TablePlus for &quot;{query}&quot;...</string>
+				<key>script</key>
+				<string>/usr/bin/bundle install &gt;/dev/null 2&gt;&amp;1
+/usr/bin/bundle exec ./workflow.rb</string>
+				<key>scriptargtype</key>
+				<integer>1</integer>
+				<key>scriptfile</key>
+				<string/>
+				<key>subtext</key>
+				<string>Search TablePlus connections</string>
+				<key>title</key>
+				<string/>
+				<key>type</key>
+				<integer>0</integer>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>253BC7E9-2285-4E65-94D8-4FF069AB33BA</string>
+			<key>version</key>
+			<integer>3</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>concurrently</key>
+				<false/>
+				<key>escaping</key>
+				<integer>102</integer>
+				<key>script</key>
+				<string>open $1</string>
+				<key>scriptargtype</key>
+				<integer>1</integer>
+				<key>scriptfile</key>
+				<string/>
+				<key>type</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>72583AE6-64B3-47D1-BFF7-FFC88D6A2097</string>
+			<key>version</key>
+			<integer>2</integer>
+		</dict>
+	</array>
+	<key>readme</key>
+	<string># Alfred Workflow for TablePlus
+
+An Alfred [Workflow](https://www.alfredapp.com/help/workflows/) for executing connections to databases with [TablePlus](https://tableplus.com).
+
+## Requirements
+- Ruby &gt;= 2.x with Bundler (macOS system installed is preferred)
+- TablePlus
+  - [Direct from website](https://tableplus.com)
+  - [Homebrew](https://brew.sh)
+  - [SetApp](https://setapp.com)
+
+## Configuration
+
+All custom configuration is handled via Alfred Workflow Configuration or [Environment Variables](https://www.alfredapp.com/help/workflows/advanced/variables/#environment).
+
+### Custom Configuration Path
+
+- [TODO] `TABLEPLUS_SHARED_CONNECTION_PATH` - Filesystem path to TablePlus Connections and ConnectionGroups Plist files
+
+## Development
+
+To update the Alfred package metadata and create a `.alfredworkflow` file, run `bundle exec rake alfred:release`
+</string>
+	<key>uidata</key>
+	<dict>
+		<key>253BC7E9-2285-4E65-94D8-4FF069AB33BA</key>
+		<dict>
+			<key>xpos</key>
+			<real>175.0</real>
+			<key>ypos</key>
+			<real>115.0</real>
+		</dict>
+		<key>72583AE6-64B3-47D1-BFF7-FFC88D6A2097</key>
+		<dict>
+			<key>xpos</key>
+			<real>400.0</real>
+			<key>ypos</key>
+			<real>125.0</real>
+		</dict>
+	</dict>
+	<key>userconfigurationconfig</key>
+	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>default</key>
+				<string/>
+				<key>filtermode</key>
+				<integer>1</integer>
+				<key>placeholder</key>
+				<string/>
+				<key>required</key>
+				<false/>
+			</dict>
+			<key>description</key>
+			<string>Filesystem path to TablePlus Connections and ConnectionGroups Plist files</string>
+			<key>label</key>
+			<string>Path to TablePlus Shared Connections</string>
+			<key>type</key>
+			<string>filepicker</string>
+			<key>variable</key>
+			<string>TABLEPLUS_SHARED_CONNECTION_PATH</string>
+		</dict>
+	</array>
+	<key>variablesdontexport</key>
+	<array/>
+	<key>version</key>
+	<string>1.0.0</string>
+	<key>webaddress</key>
+	<string>https://github.com/SeanSith/alfred-workflow-tableplus</string>
+</dict>
+</plist>
